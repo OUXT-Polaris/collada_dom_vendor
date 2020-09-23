@@ -42,7 +42,8 @@ macro(build_cppcollada)
 endmacro()
 
 build_cppcollada()
-ament_export_include_directories(include)
+ament_export_include_directories(include/collada-dom2.5)
+ament_export_libraries(collada-dom2.5-dp)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
