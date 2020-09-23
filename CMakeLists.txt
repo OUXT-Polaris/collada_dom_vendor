@@ -22,11 +22,14 @@ macro(build_cppcollada)
   set(cmake_commands)
   set(cmake_configure_args -Wno-dev)
   set(cmake_configure_args -DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_install)
+  set(cmake_configure_args -DOPT_COLLADA15=OFF)
+  set(cmake_configure_args -DOPT_COLLADA14=ON)
+  set(cmake_configure_args -DOPT_COMPILE_VIEWER=OFF)
 
   include(ExternalProject)
   externalproject_add(cppcollada-ext
-    GIT_REPOSITORY https://github.com/rdiankov/collada-dom.git
-    GIT_TAG c1e20b7d6ff806237030fe82f126cb86d661f063
+    GIT_REPOSITORY https://github.com/OUXT-Polaris/collada-dom.git
+    GIT_TAG 5720cf4b96e395efa367619c022274dacb62296f
     TIMEOUT 6000
     ${cmake_commands}
     CMAKE_ARGS
